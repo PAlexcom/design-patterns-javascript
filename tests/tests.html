@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css"/>
     <script src="../bower_components/qunit/qunit/qunit.js"></script>
     <script src="../Constructor.js"></script>
+    <script src="../Module.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -12,6 +13,18 @@
         var person = new Person("Alex");
 
         assert.equal(person.toString(), "Person: Alex");
+    });
+
+    QUnit.test("Module Pattern", function (assert) {
+        var module = moduleCounter();
+
+        assert.equal(module.getCounter(), 0);
+
+        module.incrementCounter()
+        assert.equal(module.getCounter(), 1);
+
+        module.resetCounter()
+        assert.equal(module.getCounter(), 0);
     })
 </script>
 </body>
