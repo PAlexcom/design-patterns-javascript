@@ -4,6 +4,7 @@
     <script src="../bower_components/qunit/qunit/qunit.js"></script>
     <script src="../Constructor.js"></script>
     <script src="../Module.js"></script>
+    <script src="../RevealingModule.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -20,12 +21,24 @@
 
         assert.equal(module.getCounter(), 0);
 
-        module.incrementCounter()
+        module.incrementCounter();
         assert.equal(module.getCounter(), 1);
 
-        module.resetCounter()
+        module.resetCounter();
         assert.equal(module.getCounter(), 0);
-    })
+    });
+
+    QUnit.test("Revealing Module Pattern", function (assert) {
+        var module = revealingModuleCounter();
+
+        assert.equal(module.getCounter(), 0);
+
+        module.incrementCounter();
+        assert.equal(module.getCounter(), 1);
+
+        module.resetCounter();
+        assert.equal(module.getCounter(), 0);
+    });
 </script>
 </body>
 </html>
