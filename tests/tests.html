@@ -5,6 +5,7 @@
     <script src="../Constructor.js"></script>
     <script src="../Module.js"></script>
     <script src="../RevealingModule.js"></script>
+    <script src="../Singleton.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -38,6 +39,10 @@
 
         module.resetCounter();
         assert.equal(module.getCounter(), 0);
+    });
+
+    QUnit.test("Singleton Pattern", function (assert) {
+        assert.equal(Singleton.getInstance().getRandom(), Singleton.getInstance().getRandom());
     });
 </script>
 </body>
