@@ -7,6 +7,7 @@
     <script src="../RevealingModule.js"></script>
     <script src="../Singleton.js"></script>
     <script src="../Observer.js"></script>
+    <script src="../ObserverModule.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -49,6 +50,12 @@
     QUnit.test("Observer Pattern", function (assert) {
         s.incrementCounter();
         assert.equal(s.getCounter(), o.getCounter());
+    });
+
+    QUnit.test("Observer Pattern using the Module Pattern", function (assert) {
+        assert.equal(cS.getCounter(), cO.getCounter());
+        s.incrementCounter();
+        assert.equal(cS.getCounter(), cO.getCounter());
     });
 </script>
 </body>
