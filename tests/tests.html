@@ -6,6 +6,7 @@
     <script src="../Module.js"></script>
     <script src="../RevealingModule.js"></script>
     <script src="../Singleton.js"></script>
+    <script src="../Observer.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -43,6 +44,11 @@
 
     QUnit.test("Singleton Pattern", function (assert) {
         assert.equal(Singleton.getInstance().getRandom(), Singleton.getInstance().getRandom());
+    });
+
+    QUnit.test("Observer Pattern", function (assert) {
+        s.incrementCounter();
+        assert.equal(s.getCounter(), o.getCounter());
     });
 </script>
 </body>
