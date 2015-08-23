@@ -8,6 +8,7 @@
     <script src="../Singleton.js"></script>
     <script src="../Observer.js"></script>
     <script src="../ObserverModule.js"></script>
+    <script src="../PublishSubscribe.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -56,6 +57,18 @@
         assert.equal(cS.getCounter(), cO.getCounter());
         s.incrementCounter();
         assert.equal(cS.getCounter(), cO.getCounter());
+    });
+
+    QUnit.test("Publish-Subscribe Pattern", function (assert) {
+        var test = {args: ''};
+        var token = pubSub.subscribe('test', function (args) {
+            return this.args = args;
+        }.bind(test));
+        pubSub.publish('test', 'hello');
+        assert.equal('hello', test.args);
+        assert.equal(pubSub.unsubscribe(token), true);
+        pubSub.publish('test', 'somethingElse');
+        assert.equal('hello', test.args);
     });
 </script>
 </body>
