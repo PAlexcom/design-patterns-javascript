@@ -15,3 +15,4 @@ Design Patterns Implemented
 * Publish-Subscribe
 * Revealing Module
 * Singleton
+* Prototype

@@ -10,6 +10,7 @@
     <script src="../ObserverModule.js"></script>
     <script src="../PublishSubscribe.js"></script>
     <script src="../Mediator.js"></script>
+    <script src="../Prototype.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -80,6 +81,16 @@
 
         assert.equal(user.id, 0);
         assert.equal(conference.attendees.length, 1);
+    });
+
+    QUnit.test("Prototype Pattern", function (assert) {
+        var first = {
+            value: 'anything'
+        };
+
+        var second = clone(first);
+
+        assert.equal(first.value, second.value);
     });
 </script>
 </body>
