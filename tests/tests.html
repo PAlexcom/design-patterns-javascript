@@ -9,6 +9,7 @@
     <script src="../Observer.js"></script>
     <script src="../ObserverModule.js"></script>
     <script src="../PublishSubscribe.js"></script>
+    <script src="../Mediator.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -69,6 +70,16 @@
         assert.equal(pubSub.unsubscribe(token), true);
         pubSub.publish('test', 'somethingElse');
         assert.equal('hello', test.args);
+    });
+
+    QUnit.test("Mediator Pattern", function (assert) {
+        var user = new User('Alex');
+        var conference = new Conference();
+
+        mediator.registerToConference(user, conference);
+
+        assert.equal(user.id, 0);
+        assert.equal(conference.attendees.length, 1);
     });
 </script>
 </body>
