@@ -11,6 +11,7 @@
     <script src="../PublishSubscribe.js"></script>
     <script src="../Mediator.js"></script>
     <script src="../Prototype.js"></script>
+    <script src="../Command.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -91,6 +92,24 @@
         var second = clone(first);
 
         assert.equal(first.value, second.value);
+    });
+
+    QUnit.test("Command Pattern", function (assert) {
+        var invoker = new Invoker();
+        var receiver = new Calculator(0);
+
+        invoker.setCommand(new AddCommand(4, receiver));
+        invoker.setCommand(new MultiplyCommand(2, receiver));
+
+        invoker.execute();
+        assert.equal(receiver.value, 8);
+
+        invoker.undo();
+        assert.equal(receiver.value, 4);
+
+        invoker.undo();
+        assert.equal(receiver.value, 0);
+
     });
 </script>
 </body>

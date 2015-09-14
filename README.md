@@ -16,3 +16,4 @@ Design Patterns Implemented
 * Revealing Module
 * Singleton
 * Prototype
+* Command
