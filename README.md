@@ -17,3 +17,4 @@ Design Patterns Implemented
 * Singleton
 * Prototype
 * Command
+* Mixing

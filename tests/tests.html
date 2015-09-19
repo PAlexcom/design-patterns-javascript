@@ -12,6 +12,7 @@
     <script src="../Mediator.js"></script>
     <script src="../Prototype.js"></script>
     <script src="../Command.js"></script>
+    <script src="../Mixin.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -110,6 +111,13 @@
         invoker.undo();
         assert.equal(receiver.value, 0);
 
+    });
+
+    QUnit.test("Mixin Pattern", function (assert) {
+        var employee = new Employee('Alex', 'Software Engineer');
+
+        assert.equal(employee instanceof Party, true);
+        assert.equal(employee.getName(), 'Alex');
     });
 </script>
 </body>
