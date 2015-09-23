@@ -18,3 +18,4 @@ Design Patterns Implemented
 * Prototype
 * Command
 * Mixing
+* Decorator

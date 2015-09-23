@@ -13,6 +13,7 @@
     <script src="../Prototype.js"></script>
     <script src="../Command.js"></script>
     <script src="../Mixin.js"></script>
+    <script src="../Decorator.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -118,6 +119,18 @@
 
         assert.equal(employee instanceof Party, true);
         assert.equal(employee.getName(), 'Alex');
+    });
+
+    QUnit.test("Decorator Pattern", function (assert) {
+        // First example
+        var coffeeMilk = milk(sugar(coffee()));
+
+        assert.equal(coffeeMilk.getPrice(), 6);
+
+        // Second example
+        coffeeMilk = new Sugar(new Milk(new Coffee()));
+
+        assert.equal(coffeeMilk.getPrice(), 6);
     });
 </script>
 </body>
