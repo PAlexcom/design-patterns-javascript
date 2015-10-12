@@ -14,6 +14,7 @@
     <script src="../Command.js"></script>
     <script src="../Mixin.js"></script>
     <script src="../Decorator.js"></script>
+    <script src="../Flyweight.js"></script>
 </head>
 <body>
 <div id="qunit"></div>
@@ -131,6 +132,15 @@
         coffeeMilk = new Sugar(new Milk(new Coffee()));
 
         assert.equal(coffeeMilk.getPrice(), 6);
+    });
+
+    QUnit.test("Flyweight Pattern", function (assert) {
+        var libraryManager = new LibraryManager();
+        libraryManager.addBook("How to find an Expert", "P.Alex", "New York");
+        libraryManager.addBook("How to find an Expert", "P.Alex", "London");
+        libraryManager.addBook("Better Human Manual", "P.Alex", "New York");
+
+        assert.equal(libraryManager.getLibraryBooks("New York").length, 2);
     });
 </script>
 </body>

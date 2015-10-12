@@ -19,3 +19,4 @@ Design Patterns Implemented
 * Command
 * Mixing
 * Decorator
+* Flyweight
