@@ -20,3 +20,7 @@ Design Patterns Implemented
 * Mixing
 * Decorator
 * Flyweight
+
+License
+=======
+Licensed under [MIT](https://github.com/alexprut/design-patterns-javascript/blob/master/LICENSE).

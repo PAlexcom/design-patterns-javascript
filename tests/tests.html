@@ -136,9 +136,9 @@
 
     QUnit.test("Flyweight Pattern", function (assert) {
         var libraryManager = new LibraryManager();
-        libraryManager.addBook("How to find an Expert", "P.Alex", "New York");
-        libraryManager.addBook("How to find an Expert", "P.Alex", "London");
-        libraryManager.addBook("Better Human Manual", "P.Alex", "New York");
+        libraryManager.addBook("How to find an Expert", "Alex Prut", "New York");
+        libraryManager.addBook("How to find an Expert", "Alex Prut", "London");
+        libraryManager.addBook("Better Human Manual", "Alex Prut", "New York");
 
         assert.equal(libraryManager.getLibraryBooks("New York").length, 2);
     });
